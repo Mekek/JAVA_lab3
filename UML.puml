@@ -1,0 +1,95 @@
+@startuml
+class food.Soup {
++ FoodType getType()
++ void use()
+}
+abstract class people.Human {
+- String name
+- String location
+- int satiety
+- boolean conscious
+- boolean sleepy
++ String getName()
++ void setName(String)
++ void setSleepy(boolean)
++ boolean getSleepy()
++ void setLocation(String)
++ String getLocation()
++ void setSatiety(int)
++ int getSatiety()
++ void setConscious(boolean)
++ boolean getConscious()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
++ void eat(CosmicFood,int)
++ void go(String)
++ {abstract}void sleep()
++ void wakeUp()
++ void showHunger()
+}
+enum food.FoodType {
++  FIRST
++  SECOND
++  SALAD
++  DRINK
+}
+abstract class food.CosmicFood {
+- String name
+- int calories
+- double weight
+- int numberOfServings
++ String getName()
++ void setName(String)
++ int getCalories()
++ void setCalories(int)
++ double getWeight()
++ void setWeight(double)
++ int getNumberOfServings()
++ void setNumberOfServings(int)
++ void eat(int)
++ String toString()
++ int hashCode()
++ boolean equals(Object)
++ {abstract}FoodType getType()
+}
+class food.Cutlet {
++ FoodType getType()
++ void use()
+}
+class food.Sausage {
++ FoodType getType()
++ void use()
+}
+class food.TomatoJuice {
++ FoodType getType()
++ void throwAway()
+}
+interface food.NonEdible {
+~ void throwAway()
+}
+class Main {
++ {static} void main(String[])
+}
+interface food.Edible {
+~ void use()
+}
+class people.Ponchik {
++ void sleep()
+}
+class people.Neznayka {
++ void sleep()
+}
+
+
+food.Edible <|.. food.Soup
+food.CosmicFood <|-- food.Soup
+food.Edible <|.. food.Cutlet
+food.CosmicFood <|-- food.Cutlet
+food.Edible <|.. food.Sausage
+food.CosmicFood <|-- food.Sausage
+food.NonEdible <|.. food.TomatoJuice
+food.CosmicFood <|-- food.TomatoJuice
+people.Human <|-- people.Ponchik
+people.Human <|-- people.Neznayka
+@enduml
