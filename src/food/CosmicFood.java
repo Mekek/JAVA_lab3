@@ -3,12 +3,44 @@ package food;
 import java.util.Objects;
 
 public abstract class CosmicFood{
-    protected String name;
-    protected int calories;
-    protected double weight;
-    protected int numberOfServings;
+    private String name;
+    private int calories;
+    private double weight;
+    private int numberOfServings;
 
     protected CosmicFood() {
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCalories(){
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public int getNumberOfServings(){
+        return numberOfServings;
+    }
+
+    public void setNumberOfServings(int numberOfServings) {
+        this.numberOfServings = numberOfServings;
     }
 
     public void eat(int amount){
@@ -39,18 +71,6 @@ public abstract class CosmicFood{
         if (o == null || getClass() != o.getClass()) return false;
         CosmicFood that = (CosmicFood) o;
         return calories == that.calories;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public int getCalories(){
-        return calories;
-    }
-
-    public int getNumberOfServings(){
-        return numberOfServings;
     }
 
     public abstract FoodType getType();

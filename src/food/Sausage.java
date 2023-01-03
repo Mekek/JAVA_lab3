@@ -1,12 +1,11 @@
 package food;
 
 public class Sausage extends CosmicFood implements Edible{
-
-    protected final double weight = 170;
-    protected final double calories = 210;
-    public Sausage(String name, int calories, int numberOfServings){
-        super.name = name;
-        super.numberOfServings = numberOfServings;
+    public Sausage(String name, int numberOfServings){
+        setName(name);
+        setNumberOfServings(numberOfServings);
+        setWeight(170);
+        setCalories(210);
         System.out.println("Продукт " + name + " в количестве " + numberOfServings + " загружен в ракету.");
     }
 
@@ -16,9 +15,9 @@ public class Sausage extends CosmicFood implements Edible{
 
     @Override
     public void use() {
-        if (numberOfServings > 0) {
-            numberOfServings -= 1;
-            System.out.println("Съеден(а) 1 " + name);
+        if (getNumberOfServings() > 0) {
+            setNumberOfServings(getNumberOfServings() - 1);
+            System.out.println("Съеден(а) 1 " + getName());
         } else {
             System.out.println("Есть уже нечего...");
         }

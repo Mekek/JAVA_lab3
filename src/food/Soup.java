@@ -1,12 +1,11 @@
 package food;
 
 public class Soup extends CosmicFood implements Edible{
-
-    protected final double weight = 300;
-    protected final double calories = 180;
-    public Soup(String name, int calories, int numberOfServings){
-        super.name = name;
-        super.numberOfServings = numberOfServings;
+    public Soup(String name, int numberOfServings){
+        setName(name);
+        setNumberOfServings(numberOfServings);
+        setWeight(300);
+        setCalories(180);
         System.out.println("Продукт " + name + " в количестве " + numberOfServings + " загружен в ракету.");
     }
 
@@ -16,9 +15,9 @@ public class Soup extends CosmicFood implements Edible{
 
     @Override
     public void use() {
-        if (numberOfServings > 0) {
-            numberOfServings -= 1;
-            System.out.println("Съеден(а) 1 " + name);
+        if (getNumberOfServings() > 0) {
+            setNumberOfServings(getNumberOfServings() - 1);
+            System.out.println("Съеден(а) 1 " + getName());
         }
         else {
             System.out.println("Есть уже нечего...");

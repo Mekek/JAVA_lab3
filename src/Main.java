@@ -3,10 +3,10 @@ import food.*;
 
 public class Main {
     public static void main(String[] args) {
-        Soup soup1 = new Soup("борщ (красный)", 180, 10);
-        Soup soup2 = new Soup("борщ (оранжевый)", 180, 10);
-        Cutlet cutlet = new Cutlet("Котлета по-киевски", 200, 12);
-        Sausage sausage = new Sausage("Баварская колбаска к пиву", 210, 11);
+        Soup soup1 = new Soup("борщ (красный)", 10);
+        Soup soup2 = new Soup("борщ (оранжевый)", 10);
+        Cutlet cutlet = new Cutlet("Котлета по-киевски", 12);
+        Sausage sausage = new Sausage("Баварская колбаска к пиву", 11);
         TomatoJuice tomatoJuice = new TomatoJuice("Томатный сок", 10);
         System.out.println();
 
@@ -38,12 +38,14 @@ public class Main {
         System.out.println();
 
         neznayka.eat(cutlet, 1);
+        neznayka.showHunger();
         ponchik.eat(sausage, 11);
+        ponchik.showHunger();
         System.out.println();
 
 
-        System.out.println("Незнайка хочет спать? " + neznayka.sleepy);
-        System.out.println("Пончик хочет спать? " + ponchik.sleepy);
+        System.out.println("Незнайка хочет спать? " + neznayka.getSleepy());
+        System.out.println("Пончик хочет спать? " + ponchik.getSleepy());
         System.out.println();
 
         ponchik.sleep();
