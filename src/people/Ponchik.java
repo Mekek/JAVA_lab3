@@ -10,7 +10,6 @@ public class Ponchik extends Human{
         System.out.println(getName() + " появился в ракете.");
     }
 
-
     public void sleep(){
         if (getSatiety() >= 2500) {
             System.out.println(getName() + " заснул c едой во рту.");
